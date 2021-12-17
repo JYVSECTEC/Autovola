@@ -33,7 +33,7 @@ sudo apt-get install git
 ```
 4. Clone Autovola's repository with Git:
 ```shell
-git clone https://gitlab.jyvsectec.fi/viljtu/autovola
+git clone https://github.com/JYVSECTEC/Autovola
 ```
 5. (**Optional but highly recommended!**) Modify [env](.env) file by following these steps:
 - It is strongly advised to change passwords and usernames from default values especially if you are intending to run this service on external network. 
