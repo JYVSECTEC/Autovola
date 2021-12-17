@@ -1,0 +1,472 @@
+/*################ HEADER ##################*/
+
+#plugin-page-header {
+  background-color: rgb(54, 51, 59);
+  width: 100%;
+  height: 4em;
+  top: 30px;
+  position: fixed;
+  z-index: 2;
+  display: block;
+  float: left;
+  text-align: center;
+  margin-left: -5%;
+}
+
+#plugin-page-header #return-button {
+  display: inline-block;
+  max-width: 4em;
+  position: relative;
+  margin-left: 30px;
+  margin-right: 200px;
+  cursor: pointer;
+}
+
+/*################ plugin search ##################*/
+
+#plugin-search-container {
+  position: relative;
+  margin: 10px 0 0 0;
+  display: inline;
+  top: -1.5em;
+}
+
+#plugin-search-container .search-btn {
+  margin: 0 1.2em 0 0;
+}
+
+#plugin-search-container .search-field {
+  margin: 0px 0 0px 0;
+  width: 40%;
+}
+
+#header-info-container {
+  position: relative;
+  display: inline;
+}
+
+#header-info-container #info-button {
+  max-width: 25px;
+  margin: 0 0 20px 20px;
+  float: none;
+}
+
+#header-info-container #info-box {
+  position: absolute;
+  left: -1700px;
+  max-width: 1200px;
+  overflow: scroll;
+  overflow-y:scroll; 
+  z-index: 5;
+  height: 850px;
+  top: -40px;
+}
+
+#info-box-image {
+  max-width: 1em;
+}
+
+/*################ plugin data blocks select ##################*/
+
+#all-data-blocks-amount {
+  top: -1.65em;
+  position: relative;
+  margin-right: 40px;
+}
+
+/*################ plugin checkbox ##################*/
+
+.plugin-select {
+  width: 300px;
+  position: relative;
+  display: inline-block;
+  margin-left: 50px;
+  top: -1.4em;
+}
+
+#plugin-category-select {
+  position: relative;
+  top: -1.6em;
+  margin-left: 30px;
+}
+
+/*################ BASIC DETAILS ##################*/
+
+#basic-details-container {
+  min-width: 30%;
+  max-width: 50%;
+  margin: auto;
+  border: 2px solid rgb(218,218,218);
+  margin-bottom: 50px;
+}
+
+#basic-details-container #header {
+  margin: 0 0 0 0;
+  color: black;
+  height: 1.5em;
+  font-size: 35px;
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+}
+
+#basic-details-container #header #header-name {
+  min-width: 80%;
+  display: inline-block;
+}
+
+#basic-details-container #header #info-box {
+  font-size: 20px;
+}
+
+#basic-details-container #header #info-button {
+  display: inline-block;
+  
+}
+
+#basic-details-container #details {
+width: 100%;
+overflow: auto;
+text-align: center;
+display: flex;
+}
+
+#details #detail-block #detail-header {
+  padding-top: 4px;
+  font-size: 28px;
+  height: 80px;
+  border-bottom: 1px solid rgb(218,218,218);
+  background-color:rgb(36,35,35);
+  color: white;
+  min-height: 1.5em;
+}
+
+
+#basic-details-container #details #detail-block {
+
+  display: inline-block;
+  list-style-type: none;
+  min-width: 19.90%;
+  max-width: 30%;
+  text-align: center;
+  margin: 0 0 0 -40px;
+  border-right: 1px solid rgb(218,218,218);
+  word-wrap: break-word;
+}
+
+#details #detail-block.right-side {
+  border-right: none !important;
+}
+#details #detail-block #detail-data {
+  font-size: 25px;
+  overflow: auto;
+  height: 100px;
+}
+
+/*################ PLUGINS ##################*/
+
+#outer-plugin-box {
+  display: inline-block;
+  margin: 0 1.5em 1.5em 1.5em;
+
+}
+
+#inner-plugin-box {
+  width: 100%;
+  border: 1px solid rgb(36,35,35);
+  border-bottom: 2px solid rgb(36,35,35);
+}
+
+/*################ header ##################*/
+
+#plugin-box-header {
+  width: 99.5%;
+  position: relative;
+  display: inline-block;
+  min-height: 40px;
+  text-align: left;
+}
+
+#plugin-name {
+  max-width: 50%;
+  display: inline-block;
+  padding: 5px;
+  font-size: 25px;
+}
+
+#plugin-box-header #plugin-info-button, #json-download-button {
+  max-width: 20px;
+  float: right;
+  margin: 10px;
+  cursor: pointer;
+}
+
+/*################ plugin container ##################*/
+
+#plugin-container {
+  width: 100%;
+  position: relative;
+  display: inline-block;
+}
+
+/*################ columns ##################*/
+
+.plugin-columns {
+  width: 100%;
+  background-color: rgb(36,35,35);
+  padding: 0.5em 0 1em 0;
+}
+
+.plugin-columns .columns {
+  display: inline-block;
+  margin: 0 1em 0 0em;
+  color:  white;
+  width: 100%;
+  text-align: left;
+  font-size: 20px;
+  padding-left: 0;
+  overflow: auto;
+  text-align: center;
+}
+
+.plugin-columns .columns #column {
+  display: inline-block;
+  width: 50%;
+  font-size: 18px;
+  vertical-align: middle;
+}
+
+#column #column-name {
+  display: inline-block;
+  margin-top: 9px;
+}
+
+#column-arrows {
+  display: inline-block;
+  list-style-type: none;
+  font-size: 17px;
+  padding-left: 5px;
+  position: absolute;
+}
+
+#column-arrow-up {
+  cursor: pointer;
+}
+
+#column-arrow-down {
+  cursor: pointer;
+}
+
+/*################ data blocks ##################*/
+
+#plugin-data-container {
+  margin: 0 0 0 0;
+  border: 1px solid rgb(36,35,35);
+  max-height: 10em;
+  padding-left: 0;
+  display: flex;
+}
+
+#plugin-data-container #data-block {
+  display: inline-block;
+  width: 50%;
+  height: 2.7em;
+  font-size: 15px;
+  border-right: 1px solid rgb(36,35,35);
+  overflow: scroll;
+  overflow-y: auto;
+  overflow-x: auto;
+  vertical-align: middle;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+#plugin-data-container #data-block.right-side {
+    border-right: none;
+}
+
+/*################## OPTIONS ###################*/
+#options-block {
+  height: 1.3em;
+  display: inline-block;
+  width: 100%;
+  overflow: visible;
+  color: rgb(67, 174, 201);
+  font-size: 14px;
+}
+
+#options-block #option {
+  padding-left: 4px;
+  width: 18%;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/*################## amount ###################*/
+
+#options-block #amounts {
+  width: 27%;
+  display: inline-block;
+}
+
+#amounts #amount {
+  margin-right: 4px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/*################## pages ###################*/
+
+#options-block #pages {
+  display: inline-block;
+  width: 53.5%;
+  text-align: right;
+}
+
+#pages #first-page {
+  display: inline-block;
+  width: 30px;
+  text-align: center;
+  cursor: pointer;
+}
+
+#pages #mid-page {
+  display: inline-block;
+  min-width: 20px;
+  text-align: center;
+  margin: 0 2px 0 2px;
+  cursor: pointer;
+}
+
+#pages #current-page {
+  display: inline-block;
+  width: 30px;
+  color:rgb(45, 74, 238);
+  text-align: center;
+  cursor: pointer;
+}
+
+#pages #last-page {
+  display: inline-block;
+  width: 30px;
+  text-align: center;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+
+/*################## Under 2400px width ###################*/
+
+@media screen and (max-width: 2400px) {
+  #plugin-page-header #return-button {
+    margin-left: 30px;
+    margin-right: 50px;
+  }
+}
+
+/*################## Under 2000px width ###################*/
+
+@media screen and (max-width: 2000px) {
+  #plugin-search-container .search-field {
+    width: 30%;
+  }
+
+  .plugin-columns .columns #column {
+    font-size: 16px;
+  }
+
+  #column-arrows {
+    font-size: 14px;
+  }
+
+  #plugin-data-container #data-block {
+    font-size: 14px;
+  }
+
+  #header-info-container #info-box {
+    left: -1200px;
+  }
+}
+
+/*################## Under 1700px width ###################*/
+
+@media screen and (max-width: 1700px) {
+
+  #plugin-page-header {
+    padding-top: 3px;
+    height: 3.2em;
+  }
+
+  #plugin-page-header #return-button {
+    margin-left: 30px;
+    margin-right: 10px;
+  }
+  #plugin-search-container .search-field {
+    width: 25%;
+  }
+
+  #plugin-category-select {
+    width: 150px;
+    font-size: 14px;
+    height: 2em;
+  }
+
+  #all-data-blocks-amount {
+    width: 110px;
+    font-size: 14px;
+  }
+
+  #plugin-page-header #return-button {
+    max-width: 3.2em;
+    margin-bottom: 5px;
+  }
+
+  #basic-details-container #header #header-name {
+    font-size: 25px;
+  }
+
+  #details #detail-block #detail-header {
+    font-size: 20px;
+  }
+
+  #details #detail-block #detail-data {
+    font-size: 18px;
+  }
+
+  #header-info-container #info-box {
+    left: -800px;
+  }
+}
+
+/*################## Under 1300px width ###################*/
+
+@media screen and (max-width: 1300px) {
+  #all-data-blocks-amount {
+    margin-right: 10px;
+  }
+
+  #plugin-search-container .search-btn {
+    width: 80px;
+    padding: 0px;
+  }
+
+  #header-info-container #info-button {
+    margin-left: 2px
+  }
+
+  #column-arrows {
+    padding-left: 1px;
+  }
+}
+
+/*################## Under 1000px width ###################*/
+
+@media screen and (max-width: 1000px) {
+  #plugin-page-header {
+    height: 7em;
+  }
+
+  #header-info-container #info-box {
+    left: -100px;
+  }
+}

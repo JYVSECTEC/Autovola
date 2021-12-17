@@ -1,0 +1,112 @@
+version: '3.7'
+
+services:
+  apache:
+    image: autovola/apache:latest
+    restart: always
+    container_name: apache
+    cap_add:
+      - NET_ADMIN
+    privileged: true
+    environment:
+      - AUTOVOLA_DIRECTORY=${AUTOVOLA_DIRECTORY}
+      - DUMPS_DIRECTORY=${DUMPS_DIRECTORY}
+      - SYMBOLS_DIRECTORY=${SYMBOLS_DIRECTORY}
+      - FLASK_SECRET_KEY=${FLASK_SECRET_KEY}
+      - MONGO_USER=${MONGO_USER}
+      - MONGO_PASSWORD=${MONGO_PASSWORD}
+      - MONGO_HOSTNAME=${MONGO_HOSTNAME}
+      - ANALYSE_MACHINE_AMOUNT=${ANALYSE_MACHINE_AMOUNT}
+    networks:
+      private:
+        ipv4_address: ${APACHE_IP}
+    ports:
+      - 80:80
+      - 8080:8080
+    extra_hosts:
+      - "${APACHE_HOSTNAME}:${APACHE_IP}"
+      - "${MONGO_HOSTNAME}:${MONGO_IP}"
+    volumes:
+      - dumps:${DUMPS_DIRECTORY}
+      - linux_symbols:${SYMBOLS_DIRECTORY}/linux/
+      - windows_symbols:${SYMBOLS_DIRECTORY}/windows/
+    build:
+      dockerfile: ./containers/apache/dockerfile.apache
+      context: .
+      args:
+        - AUTOVOLA_DIRECTORY=${AUTOVOLA_DIRECTORY}
+        - DUMPS_DIRECTORY=${DUMPS_DIRECTORY}
+        - SYMBOLS_DIRECTORY=${SYMBOLS_DIRECTORY}
+        - APACHE_HOSTNAME=${APACHE_HOSTNAME}
+
+  mongodb:
+    image: autovola/mongo:latest
+    restart: always
+    container_name: mongodb
+    privileged: true
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=${MONGO_USER}
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_PASSWORD}
+      - MONGO_INITDB_DATABASE=autovola
+    networks:
+      private:
+        ipv4_address:
+          ${MONGO_IP}
+    expose:
+      - "27017"
+    volumes:
+      - ./containers/mongodb/mongo-init.sh:/docker-entrypoint-initdb.d/mongo-init.sh
+      - ./containers/mongodb/mongod.conf:/etc/mongod.conf
+
+  analyse:
+    image: autovola/analyse:latest
+    restart: always
+    networks:
+      private:
+    expose:
+      - "80"
+    privileged: true
+    environment:
+      - AUTOVOLA_DIRECTORY=${AUTOVOLA_DIRECTORY}
+      - DUMPS_DIRECTORY=${DUMPS_DIRECTORY}
+      - SYMBOLS_DIRECTORY=${SYMBOLS_DIRECTORY}
+      - analysed_file=""
+      - MONGO_PASSWORD=${MONGO_PASSWORD}
+      - MONGO_USER=${MONGO_USER}
+      - MONGO_HOSTNAME=${MONGO_HOSTNAME}
+    extra_hosts:
+      - "${APACHE_HOSTNAME}:${APACHE_IP}"
+      - "${MONGO_HOSTNAME}:${MONGO_IP}"
+    volumes:
+      - dumps:${DUMPS_DIRECTORY}
+      - linux_symbols:${SYMBOLS_DIRECTORY}/linux/
+      - windows_symbols:${SYMBOLS_DIRECTORY}/windows/
+    build:
+      dockerfile: ./containers/analyse/dockerfile.analyse
+      context: .
+      args:
+        - AUTOVOLA_DIRECTORY=${AUTOVOLA_DIRECTORY}
+        - DUMPS_DIRECTORY=${DUMPS_DIRECTORY}
+        - SYMBOLS_DIRECTORY=${SYMBOLS_DIRECTORY}
+    deploy:
+      mode: replicated
+      replicas: ${ANALYSE_MACHINE_AMOUNT}
+      resources:
+        limits:
+          memory: ${ANALYSE_MACHINE_RAM}
+        reservations:
+          memory: 256M
+
+volumes:
+  dumps:
+  windows_symbols:
+  linux_symbols:
+
+networks:
+  private:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: ${SUBNET}
+          gateway: ${GATEWAY}

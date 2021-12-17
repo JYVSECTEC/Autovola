@@ -1,0 +1,131 @@
+/*################ PAGE ##################*/
+
+#linux-dump-page {
+    display: inline-block;
+    width: 100%;
+    margin-top: 100px;
+    text-align: center;
+  }
+
+/*################## PLUGINS INDIVIDUAL SETTINGS ####################*/
+
+/*################## basicdetails ###################*/
+
+#basic-details-container #details #detail-block {
+  min-width: 24.90%;
+}
+
+/*################## lsmod ###################*/
+
+#outer-plugin-box.lsmod {
+    margin: 0 2.5em 5em 2.5em;
+    width: 30%;
+  }
+  
+  #plugin-container.lsmod .plugin-columns .columns #column {
+    display: inline-block;
+    width: 15%;
+    font-size: 18px;
+    vertical-align: middle;
+  }
+  
+  /*################## lsof ########################*/
+  
+  #outer-plugin-box.lsof {
+    width: 30%;
+    margin: 0 2.5em 5em 2.5em;
+  }
+  
+  #plugin-container.lsof .plugin-columns .columns #column {
+    display: inline-block;
+    width: 25%;
+    font-size: 18px;
+    vertical-align: middle;
+  }
+  
+  /*################## check_idt ###################*/
+  
+  #outer-plugin-box.check_idt {
+    width: 40%;
+    margin: 0 2.5em 5em 2.5em;
+  }
+  
+  /*################## check_syscall ###############*/
+  
+  #outer-plugin-box.check_syscall {
+    width: 40%;
+    margin: 0 2.5em 5em 2.5em;
+  }
+  
+  /*################## elfs #######################*/
+  
+  #outer-plugin-box.elfs {
+    width: 60%;
+    margin: 0 2.5em 5em 2.5em;
+  }
+  
+  /*################## malfind ####################*/
+  
+  #outer-plugin-box.malfind {
+    max-width: 90%;
+    margin: 0 2.5em 5em 2.5em;
+  }
+  
+  div[name="malfind"] #plugin-data-container #data-block {
+    height: 7em;
+  }
+  
+  /*################## maps #######################*/
+  
+  #outer-plugin-box.maps {
+    width: 85%;
+    margin: 0 2.5em 5em 2.5em;
+  }
+  
+  /*################## check_ainfo ###############*/
+  
+  #outer-plugin-box.check_ainfo {
+    width: 40%;
+    margin: 0 2.5em 5em 2.5em;
+  }
+  
+  /*################## keyboard_notifiers ########*/
+  
+  #outer-plugin-box.keyboard_notifiers {
+    width: 30%;
+    margin: 0 2.5em 5em 2.5em;
+  }
+  
+  /*################## pslist ####################*/
+  
+  #outer-plugin-box.pslist {
+    width: 25%;
+  }
+  
+  #plugin-container.pslist .plugin-columns .columns #column {
+    display: inline-block;
+    width: 33%;
+    font-size: 18px;
+    vertical-align: middle;
+  }
+  
+  /*################## tty_check #################*/
+  
+  #outer-plugin-box.tty_check {
+    width: 35%;
+    margin: 0 2.5em 5em 2.5em;
+  }
+  
+  /*################## check_modules #################*/
+  
+  #outer-plugin-box.check_modules {
+    width: 20%;
+    margin: 0 2.5em 5em 2.5em;
+  }
+  
+  /*################## check_modules #################*/
+  
+  #outer-plugin-box.check_creds {
+    width: 10%;
+    margin: 0 2.5em 5em 2.5em;
+  }

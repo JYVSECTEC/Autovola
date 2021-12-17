@@ -1,0 +1,317 @@
+/*################ PAGE ##################*/
+
+#windows-dump-page {
+    display: inline-block;
+    width: 100%;
+    margin-top: 100px;
+    text-align: center;
+  }
+
+/*################## PLUGINS INDIVIDUAL SETTINGS ####################*/
+
+/*################## basicdetails ###################*/
+#basic-details-container.windows #details #detail-block {
+  min-width: 19.90%;
+}
+
+/*################## bigpools ###################*/
+#outer-plugin-box.bigpools {
+  width: 33%;
+}
+
+/*################## callbacks ###################*/
+#outer-plugin-box.callbacks {
+  width: 45%;
+}
+
+/*################## dlllist ###################*/
+#outer-plugin-box.dlllist {
+  width: 55%;
+}
+
+/*################## driverirp ###################*/
+#outer-plugin-box.driverirp {
+  width: 50%;
+}
+
+/*################## driverscan ###################*/
+#outer-plugin-box.driverscan {
+  width: 45%;
+}
+
+/*################## envars ###################*/
+#outer-plugin-box.envars {
+  width: 40%;
+}
+
+[name="envars"] #plugin-data-container #data-block {
+  height: 5em;
+}
+
+/*################## filescan ###################*/
+#outer-plugin-box.filescan {
+  width: 40%;
+}
+
+[name="filescan"] #plugin-data-container #data-block {
+  height: 4em;
+}
+
+/*################## getserviceids ###################*/
+#outer-plugin-box.getserviceids {
+  width: 35%;
+}
+
+/*################## getsids ###################*/
+#outer-plugin-box.getsids {
+  width: 35%;
+}
+
+/*################## handles ###################*/
+#outer-plugin-box.handles {
+  width: 65%;
+}
+
+[name="handles"] #plugin-data-container #data-block {
+  height: 5em;
+}
+
+/*################## hivelist ###################*/
+#outer-plugin-box.hivelist {
+  width: 30%;
+}
+
+[name="hivelist"] #plugin-data-container #data-block {
+  height: 4em;
+}
+
+/*################## info ###################*/
+
+#plugin-box.info {
+  width: 35%;
+  display: inline-block;
+  margin: 0 1.5em 1.5em 1.5em;
+  border: 1px solid rgb(36,35,35);
+  border-bottom: 2px solid rgb(36,35,35);
+}
+
+
+#plugin-container.info, #info-column, #info-value {
+  border: 1px solid black;
+  font-weight: none;
+  border-radius: 0;
+}
+
+#plugin-container.info {
+  font-weight: none;
+  border-radius: none;
+}
+
+#info-block {
+  display: inline;
+  height: 2em;
+  font-weight: none;
+}
+
+#info-column {
+  color:  white;
+  width: 45%;
+  font-size: 16px;
+  text-align: center;
+  background-color: rgb(36,35,35);
+  float: left;
+  height: 2em;
+  overflow: auto;
+}
+
+#info-value {
+  color:  black;
+  width: 54%;
+  font-size: 16px;
+  padding-left: 0;
+  text-align: center;
+  float: right;
+  height: 2em;
+  overflow: auto;
+}
+
+/*################## malfind ###################*/
+
+#outer-plugin-box.malfind {
+  width: 95%;
+}
+
+/*################## modules ###################*/
+#outer-plugin-box.modules {
+  width: 40%;
+}
+
+[name="modscan"] #plugin-data-container #data-block {
+  min-height: 4em;
+}
+
+/*################## modscan ###################*/
+#outer-plugin-box.modscan {
+  width: 40%;
+}
+
+[name="modscan"] #plugin-data-container #data-block {
+  min-height: 4em;
+}
+
+/*################## mutantscan ###################*/
+#outer-plugin-box.mutantscan {
+  width: 25%;
+}
+
+[name="mutantscan"] #plugin-data-container #data-block {
+  height: 4em;
+}
+
+/*################## netscan ###################*/
+#outer-plugin-box.netscan {
+  width: 75%;
+}
+
+/*################## poolscanner ###################*/
+#outer-plugin-box.poolscanner {
+  width: 45%;
+}
+
+[name="poolscanner"] #plugin-data-container #data-block {
+  height: 5em;
+}
+
+/*################## pslist ###################*/
+#outer-plugin-box.psscan {
+  width: 80%;
+}
+
+/*################## pslist ###################*/
+#outer-plugin-box.printkey {
+  width: 50%;
+}
+
+/*################## privs ###################*/
+#outer-plugin-box.privs {
+  min-width: 45%;
+  max-width: 60%;
+}
+
+/*################## ssdt ###################*/
+#outer-plugin-box.ssdt {
+  min-width: 30%;
+  max-width: 40%;
+}
+
+/*################## svcscan ###################*/
+#outer-plugin-box.svcscan {
+  width: 80%;
+}
+
+/*################## symlinkscan ###################*/
+#outer-plugin-box.symlinkscan {
+  width: 45%;
+}
+
+[name="symlinkscan"] #plugin-data-container #data-block {
+  height: 5em;
+}
+
+/*################## userassist ###################*/
+#outer-plugin-box.userassist {
+  width: 90%;
+}
+
+[name="userassist"] #plugin-data-container #data-block {
+  min-height: 5em;
+  max-height: 6em;
+}
+
+/*################## vadinfo ###################*/
+#outer-plugin-box.vadinfo {
+  width: 95%;
+}
+
+/*################## virtmap ###################*/
+#outer-plugin-box.virtmap {
+  width: 30%;
+}
+
+/*################## verinfo ###################*/
+#outer-plugin-box.verinfo {
+  width: 50%;
+}
+
+
+/*################## Under 2270px width ###################*/
+
+@media screen and (max-width: 2270px) {
+  #info-column {
+    width: 45.5%;
+    display: table-cell;
+  }
+
+  #info-value {
+    width: 52.5%;
+    display: table-cell;
+  }
+}
+
+/*################## Under 1700px width ###################*/
+
+@media screen and (max-width: 1700px) {
+  .plugin-columns[name="userassist"] .columns #column {
+    font-size: 14px;
+  }
+
+  #outer-plugin-box.userassist {
+    width: 95%;
+  }
+
+  .plugin-columns[name="vadinfo"] .columns #column {
+    font-size: 14px;
+  }
+
+  .plugin-columns[name="malfind"] .columns #column {
+    font-size: 14px;
+  }
+
+  #outer-plugin-box.malfind {
+    width: 95%;
+  }
+
+  .plugin-columns[name="printkey"] .columns #column {
+    font-size: 14px;
+  }
+
+  #outer-plugin-box.printkey {
+    width: 70%;
+  }
+
+  #outer-plugin-box.bigpools {
+    width: 45%;
+  }
+
+  .plugin-columns[name="netscan"] .columns #column {
+    font-size: 14px;
+  }
+
+  #outer-plugin-box.netscan {
+    width: 95%;
+  }
+
+  #info-column {
+    font-size: 12px;
+    height: 2.66em;
+  }
+}
+
+/*################## Under 1100px width ###################*/
+
+@media screen and (max-width: 1100px) {
+
+  #info-value {
+    width: 50.5%;
+  }
+}

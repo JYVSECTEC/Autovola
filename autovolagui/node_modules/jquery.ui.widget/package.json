@@ -1,0 +1,27 @@
+{
+    "name": "jquery.ui.widget",
+    "version": "1.10.3",
+    "title": "jQuery UI Widget",
+    "description": "Create stateful jQuery plugins using the same abstraction as all jQuery UI widgets.",
+    "keywords": [
+        "jquery",
+        "ui",
+        "widget"
+    ],
+    "homepage": "http://api.jqueryui.com/jQuery.widget/",
+    "author": {
+        "name": "jQuery Foundation",
+        "url": "http://jqueryui.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/jquery/jquery-ui.git"
+    },
+    "bugs": "http://bugs.jqueryui.com/",
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "http://www.opensource.org/licenses/MIT"
+        }
+    ]
+}

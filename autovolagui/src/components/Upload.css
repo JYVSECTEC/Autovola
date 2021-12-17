@@ -1,0 +1,126 @@
+/*################ UPLOAD FORM ##################*/
+#container {
+    margin: 100px 0 0 10%;
+    text-align: center;
+}
+
+#container a {
+    text-align: left;
+}
+
+button {
+    margin: 0 0 0 10px;
+    padding: 4px;
+    font-size: 15px;
+}
+
+.input-container {
+    margin: 25px 0 30px 0;
+}
+
+.input-container input {
+    font-size: 15px;
+}
+
+#os-dropdown {
+    font-size: 15px;
+}
+
+/*################ DESCRIPTION ##################*/
+
+#description-container {
+    margin: 10px 0 10px 0;
+}
+
+#description {
+    min-width: 350px;
+    min-height: 100px;
+    font-size: 15px;
+}
+
+#description:focus::placeholder {
+    color: transparent;
+}
+
+/*################ PROGRESS BAR ##################*/
+
+#progress-bar-container {
+    display: none;
+    width: 40%;
+    background-color: grey;
+    margin: auto;
+    margin-top: 100px;
+    border-radius: 25px;
+    position: relative;
+    height: 30px;
+}
+
+#bar {
+    width: 1%;
+    height: 30px;
+    background-color: green;
+    color: white;
+    border-radius: 25px;
+    display: absolute;
+}
+
+#bar-text {
+    display: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    color: black;
+}
+
+/*################ MANUAL ##################*/
+
+#manual {
+    margin: auto;
+    margin-top: 4em;
+    border: 1px solid;
+    max-width: 800px;
+    min-height: 200px;
+    text-align: left;
+}
+
+#manual h2, #manual h3, #manual h4 {
+    padding: 0 0 0 1.5em;
+    text-align: left;
+}
+
+#manual p {
+    padding-left: 1em;
+    padding-right: 1em;
+    text-align: left;
+}
+
+#manual a {
+    text-align: left;
+    text-decoration: none;
+}
+
+/*################ POP UP WINDOW ##################*/
+
+#info-pop-up {
+    z-index: 3;
+    position: absolute;
+    background-color: rgb(0, 122, 204);
+    color: white;
+    margin-top: 100px;
+    min-width: 100px;
+    margin: 15px;
+    top: 90%;
+    left: 10%;
+}
+
+#info-pop-up p {
+    margin: 12px;
+    font-size: 18px;
+    display: inline-block;
+}
+
+#close-pop-up-button {
+    opacity: 50%;
+    display: inline-block;
+    max-width: 5px;
+}

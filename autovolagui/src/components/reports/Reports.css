@@ -1,0 +1,546 @@
+#page {
+  margin-top: 100px;
+  margin-left: 10%;
+  width: 90%;
+
+}
+
+#page-box {
+  margin: auto;
+  text-align: center;
+  min-width: 700px;
+}
+
+/*################ SEARCH ##################*/
+
+#reports-search-container {
+  margin: auto;
+  width: 50%;
+}
+
+#reports-search-container #info-button {
+  display: inline;
+  float: right;
+  left: -40px;
+  position: relative;
+}
+
+#reports-search-container #info-box {
+  max-width: 1200px;
+}
+
+#reports-search-container #info-box p, #reports-search-container #info-box ol, #reports-search-container #info-box ul {
+  font-size: 15px;
+}
+
+.search-btn {
+  margin: 0 1.2em 0 0;
+  padding: 4px;
+  font-size: 15px;
+}
+
+.search-field {
+  margin: 25px 0 30px 0;
+  padding: 2px 2px 2px 2px;
+  font-size: 16px;
+  width: 65%;
+}
+
+#loading-reports {
+  max-width: 30px;
+  top: 10px;
+  margin-left: 5px;
+  position: relative;
+  display: none;
+}
+
+/*################ RESULTS ##################*/
+
+#results-container {
+  width: 75%;
+  display: inline-block;
+  text-align: center;
+  margin: auto;
+  min-width: 700px;
+  margin-bottom: 150px;
+}
+
+/*################ columns ##################*/
+
+.results-columns {
+  width: 100%;
+  background-color: rgb(36,35,35);
+  padding: 3px 0 1px 0;
+}
+
+#columns {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 1px;
+  margin-bottom: 10px;
+}
+
+.results-columns #column{
+  display: inline-block;
+  color:  white;
+  width: 16.08%;
+  font-size: 20px;
+}
+
+.results-columns #column.left-column{
+  width: 3%;
+}
+
+#results {
+  width: 100%;
+}
+
+/*################ linux & windows ##################*/
+
+#linux-data-container, #windows-data-container {
+  margin: 0 0 0 0;
+  border: 1px solid rgb(36,35,35);
+  text-align: left;
+  max-height: 10em;
+  padding-left: 0;
+  display: flex;
+}
+
+#linux-data-container #data-block, #windows-data-container #data-block{
+  display: inline-block;
+  width: 19%;
+  min-height: 4em;
+  text-align: center;
+  font-size: 20px;
+  border-right: 1px solid rgb(36,35,35);
+  overflow: auto;
+  vertical-align: middle;
+}
+
+#linux-data-container #data-block.button-block, #windows-data-container #data-block.button-block{
+  width: 3.5%;
+  text-align: center;
+  min-height: 4em;
+}
+
+#linux-data-container #data-block.tags-block, #windows-data-container #data-block.tags-block{
+  border-right: none;
+  text-align: center;
+  display: inline-block;
+}
+
+/*################ report buttons ##################*/
+
+.analyze-button {
+  margin-top: 8px;
+  max-width: 2.5em;
+  display: table-cell;
+}
+
+.edit-dump-data-button {
+  margin-top: 2px;
+  max-width: 2em;
+  display: table-cell;
+}
+
+.delete-dump-check-button {
+  margin-top: 4px;
+  max-width: 2em;
+  display: table-cell;
+  margin-bottom: 0px;
+}
+
+.plugin-display-button {
+  margin-top: 0px;
+  max-width: 2.5em;
+  display: table-cell;
+}
+
+/*###### Chrome 29+ ######*/
+@media screen and (-webkit-min-device-pixel-ratio:0)
+  and (min-resolution:.001dpcm) { 
+  .analyze-button {
+    display: inline-block;
+  }
+
+  .edit-dump-data-button {
+    display: inline-block;
+  }
+
+  .delete-dump-check-button {
+    display: inline-block;
+  }
+
+  .plugin-display-button {
+    display: inline-block;
+  } 
+}
+
+/*################ PLUGIN SELECT BOX ##################*/
+
+#plugin-select-box {
+  background-color: white;
+  min-width: 250px;
+  max-width: 700px;
+  min-height: 200px;
+  max-height: 700px;
+  position: absolute;
+  margin-top: -2.5em;
+  margin-left: 3em;
+  z-index: 1;
+  border: 1px solid rgb(36,35,35);
+  padding-left: 0px;
+  text-align: center;
+}
+
+#plugins {
+  position: relative;
+}
+
+#plugins #plugin {
+  position: relative;
+  text-align: left;
+}
+
+#run-plugins-button {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+
+/*################ EDIT BOX ##################*/
+
+#edit-box {
+  background-color: white;
+  max-width: 350px;
+  min-height: 500px;
+  position: absolute;
+  margin-top: -2.5em;
+  margin-left: 3em;
+  z-index: 1;
+  border: 1px solid rgb(36,35,35);
+  padding-left: 0px;
+}
+
+/*################ header ##################*/
+
+#edit-box-header {
+  background-color: rgb(36,35,35);
+  width: 100%;
+  height: 30px;
+  text-align: right;
+}
+
+#close-button {
+  max-height: 15px;
+  margin: 8px;
+  cursor: pointer;
+}
+
+/*################ edit block ##################*/
+
+#data-edit-block {
+  text-align: left;
+  display: block;
+  margin-left: 10px;
+}
+
+#data-edit-block #title {
+  text-align: left;
+}
+
+/*################ edit field ##################*/
+
+#edit-field {
+  margin-bottom: 10px;
+}
+
+#edit-field.name-edit-field {
+  width: 280px;
+}
+
+#edit-field.description-edit-field {
+  padding: 0 140px 50px 0;
+  font-size: 15px;
+  resize: none;
+}
+
+/*################ edit button ##################*/
+
+#edit-button.color-add {
+  margin-bottom: 20px;
+}
+
+/*################ tags ##################*/
+
+#tag-colors {
+  display: inline-block;
+  list-style-type: none;
+  padding: 0;
+}
+
+#tag-color {
+  display: inline-block;
+  border: 1px black solid;
+  height: 25px;
+  width: 25px;
+  margin: 5px;
+}
+
+#tag-color.red {
+  background-color: #F68B8B;
+  border: 2px red solid;
+}
+
+#tag-color.green {
+  background-color: #CDFF8E;
+}
+
+#tag-color.blue {
+  background-color: #62B3FD;
+}
+
+#tag-color.orange {
+  background-color: #FFC188;
+}
+
+#tag-color.purple {
+  background-color: #EE84FF;
+}
+
+#tag-color.yellow {
+  background-color: #F9DC45;
+}
+
+#tag-color.turquoise {
+  background-color: #A1FFE9;
+}
+
+#tag-block {
+  display: inline-block;
+  margin: 5px;
+  padding: 2px 10px 2px 10px;
+  border: 2px black solid;
+  border-radius: 600px;
+}
+
+#tag-text {
+  font-size: 17px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+#remove-tag {
+  max-height: 12px;
+  display: inline-block;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+#current-tags {
+  display: inline-block;
+  min-height: 100px;
+  max-height: 100px;
+  min-width: 300px;
+  margin-right: 10px;
+  border: 1px rgb(175, 175, 175) solid;
+  overflow: auto;
+}
+
+/*################ DELETE BOX ##################*/
+
+#delete-dump-box {
+  background-color: white;
+  min-width: 250px;
+  min-height: 50px;
+  position: absolute;
+  margin-top: -2.5em;
+  margin-left: 3em;
+  z-index: 1;
+  border: 1px solid rgb(36,35,35);
+  padding-left: 0px;
+  text-align: center;
+}
+
+#delete-dump-box p {
+  margin: 10px 10px 10px 10px;
+  font-size: 16px;
+}
+
+#delete-dump-box-header, #select-plugins-box-header, #edit-box-header {
+  background-color: rgb(36,35,35);
+  width: 100%;
+  height: 35px;
+  margin-top: 0;
+}
+
+#delete-dump-box-header p, #select-plugins-box-header p, #edit-box-header p {
+  margin: 0 5px 10px 5px;
+  text-align: left;
+  color: white;
+  display: inline-block;
+  padding-top: 5px;
+  float: left;
+  font-size: 20px;
+}
+
+#delete-dump-box-header img, #select-plugins-box-header img, #edit-box-header img {
+  display: inline-block;
+  float: right;
+}
+
+#delete-button {
+  margin-bottom: 20px;
+}
+
+/*################ INFO POP UP ##################*/
+
+#info-pop-up {
+  z-index: 3;
+  position: absolute;
+  background-color: rgb(0, 122, 204);
+  color: white;
+  margin-top: 100px;
+  min-width: 100px;
+  margin: 15px;
+  top: 90%;
+  left: 10%;
+}
+
+#info-pop-up p {
+  margin: 12px;
+  font-size: 18px;
+}
+
+#info-pop-up {
+  z-index: 3;
+  position: absolute;
+  background-color: rgb(0, 122, 204);
+  color: white;
+  margin-top: 100px;
+  min-width: 100px;
+  margin: 15px;
+  top: 90%;
+  left: 10%;
+}
+
+#info-pop-up p {
+  margin: 12px;
+  font-size: 18px;
+  display: inline-block;
+  float: left;
+}
+
+#close-pop-up-button {
+  opacity: 50%;
+  display: inline-block;
+  max-width: 15px;
+  margin: 12px 5px 12px 5px;
+  float: right;
+}
+
+/*################ INFO BUTTON ##################*/
+
+#info-button {
+  max-width: 30px;
+  float: left;
+  margin: 10px;
+  cursor: pointer;
+}
+
+#info-button[name="icons-meaning"]  {
+  display: inline;
+  float: none;
+  margin: auto;
+  position: relative;
+  left: 120px;
+}
+
+#column #info-button {
+  max-width: 30px;
+  margin: 0 0 0 10px;
+  background-color: rgb(36,35,35);
+  cursor: pointer;
+  position: relative;
+  top: 7px;
+  display: inline;
+}
+
+/*################ INFO BOX ##################*/
+
+#info-box {
+  background-color: rgb(251, 252, 253);
+  min-width: 400px;
+  max-width: 800px;
+  position: absolute;
+  z-index: 1;
+  margin-top: 3em;
+  border: 3px solid rgb(36,35,35);
+  padding-left: 10px;
+  color: black;
+  text-align: left;
+  padding: 10px;
+
+}
+
+#info-box h2 {
+  text-align: left;
+}
+
+#close-info-box {
+  max-width: 15px;
+  margin: 5px;
+  float: right;
+  cursor: pointer;
+}
+
+
+/*################ SELECT PLUGIN BOX USAGE ##################*/
+
+#plugin-run-status, #plugin-usage-image {
+  max-width: 1em;
+}
+
+#plugin-image-meaning {
+  float: none;
+  text-align: left;
+  color: black;
+  display: block;
+}
+
+#plugin-image-meaning p{
+  color: black;
+  display: block;
+  float: none;
+}
+
+#plugin-image-meaning img{
+  float: none;
+}
+
+@media screen and (max-width: 1450px) {
+  .results-columns #column{
+    font-size: 18px;
+  }
+
+  #linux-data-container #data-block, #windows-data-container #data-block{
+    font-size: 16px;
+  }
+
+  .plugin-display-button, .analyze-button, .edit-dump-data-button, .delete-dump-check-button {
+    max-width: 1.8em;
+  }
+
+  #column #info-button {
+    max-width: 1.2em;
+    margin-left: 2px;
+  }
+  
+  #info-button[name="icons-meaning"]  {
+    left: 90px;
+  }
+
+  #reports-search-container {
+    width: 70%;
+  }
+}

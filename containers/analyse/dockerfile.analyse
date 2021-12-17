@@ -1,0 +1,35 @@
+FROM autovola/analyse:latest
+# Commented commands below have been run on this image
+#RUN apt-get update
+#RUN apt-get install net-tools vim python3 python3-pip -y
+#RUN pip3 install bson configparser python-dotenv pymongo flask waitress threaded pycryptodome distorm3 yara-python urllib3 capstone future pefile
+
+# ARGUMENTS
+ARG AUTOVOLA_DIRECTORY
+ARG DUMPS_DIRECTORY
+ARG SYMBOLS_DIRECTORY
+
+# Create Autovola directories and log file
+RUN mkdir -p ${AUTOVOLA_DIRECTORY}
+RUN mkdir -p ${DUMPS_DIRECTORY}
+RUN mkdir -p ${SYMBOLS_DIRECTORY}/linux
+RUN mkdir -p ${SYMBOLS_DIRECTORY}/windows
+RUN mkdir ${AUTOVOLA_DIRECTORY}/volatility3
+RUN touch /var/log/autovola.log
+
+# Copy symbol files, Volatility3 and python code from host to container
+COPY containers/analyse/volatility3/ ${AUTOVOLA_DIRECTORY}/volatility3/
+COPY containers/analyse/python/ ${AUTOVOLA_DIRECTORY}
+COPY containers/analyse/symbols/windows/ ${SYMBOLS_DIRECTORY}/windows
+RUN chmod 444 ${AUTOVOLA_DIRECTORY}/plugins.cfg
+RUN chmod -R 766 ${SYMBOLS_DIRECTORY}/ # Make sure www-data is the owner of Windows directories after copying windows ISF-files
+RUN chown -R www-data:www-data ${SYMBOLS_DIRECTORY}/
+RUN chmod -R 766 ${DUMPS_DIRECTORY}/ # Make sure www-data is the owner of dumps
+RUN chown -R www-data:www-data ${DUMPS_DIRECTORY}/
+
+# Install Volatility 3 python library
+WORKDIR ${AUTOVOLA_DIRECTORY}/volatility3/
+RUN cd ${AUTOVOLA_DIRECTORY}/volatility3/
+RUN python3 setup.py install
+WORKDIR ${AUTOVOLA_DIRECTORY}
+CMD ["python3","-u","main.py"]

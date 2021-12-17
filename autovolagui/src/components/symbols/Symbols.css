@@ -1,0 +1,14 @@
+#windows-sub-dir-dropdown {
+    display: none;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 250px;
+    text-align: center;
+}
+
+#data {
+    text-align: center;
+    width: 50%;
+    margin: auto;
+}
