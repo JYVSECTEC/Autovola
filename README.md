@@ -50,3 +50,8 @@ If you see error: **cgroups: cgroup mountpoint does not exist: unknown** you can
 sudo mkdir /sys/fs/cgroup/systemd
 sudo mount -t cgroup -o none,name=systemd cgroup /sys/fs/cgroup/systemd
 ```
+
+# Author
+
+Author: JYVSECTEC/Tuomo Viljakainen  
+More information: [jyvsectec.fi](https://jyvsectec.fi)
