@@ -406,4 +406,4 @@ def delete_dump_data(target):
         return jsonify("Fail"), 400
 
 if __name__ == "__main__":
-   api.run(debug=True, port=8080, host="0.0.0.0")
+   api.run(port=8080, host="0.0.0.0")

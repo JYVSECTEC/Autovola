@@ -13,7 +13,6 @@ def insert(client, database, table, data):
     db = client[database]
     db_table = db[table]
     result = db_table.insert_one(data)
-    #find = db_table.find_one()
     return result.inserted_id
 
 def update(client, database, table, data, db_id):
@@ -33,7 +32,6 @@ def update(client, database, table, data, db_id):
     except TypeError:
         result = "error"
     print("Update: " + str(result))
-    #find = db_table.find_one()
     return result
 
 def upload_data(database, table, data, db_id = None):
@@ -44,7 +42,6 @@ def upload_data(database, table, data, db_id = None):
         else:
             result = update(client, database, table, data, db_id)
     except pymongo.errors.ServerSelectionTimeoutError:
-        # LOG THIS
         result = "timeout"
     print(type(result))
     return result

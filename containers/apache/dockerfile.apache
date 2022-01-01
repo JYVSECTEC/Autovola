@@ -1,8 +1,4 @@
 FROM autovola/apache:latest
-# Commented commands below have been run in image
-#RUN apt-get update
-#RUN apt-get install vim apache2 python3-pip lsof libapache2-mod-wsgi-py3 python-dev net-tools -y
-#RUN pip3 install bson flask Unidecode pyftpdlib python-dotenv requests pymongo flask-cors waitress threaded
 
 # ARGUMENTS
 ARG AUTOVOLA_DIRECTORY
@@ -10,14 +6,23 @@ ARG DUMPS_DIRECTORY
 ARG SYMBOLS_DIRECTORY
 ARG APACHE_HOSTNAME
 
-# Tell Apache its hostname
-RUN echo "export APACHE_HOSTNAME=${APACHE_HOSTNAME}" >> /etc/environment
-
-### PYTHON API ###
+# Create directory structure
 RUN mkdir ${AUTOVOLA_DIRECTORY}
 RUN mkdir -p ${DUMPS_DIRECTORY}
 RUN mkdir -p ${SYMBOLS_DIRECTORY}/windows
 RUN mkdir -p ${SYMBOLS_DIRECTORY}/linux
+
+# Install dependencies
+RUN sed -i 's/stable\/updates/stable-security\/updates/' /etc/apt/sources.list
+RUN apt-get update
+RUN apt-get install apache2 python3-pip libapache2-mod-wsgi-py3 python-dev pkg-config libglib2.0-dev libgirepository1.0-dev libcairo2-dev -y
+#RUN pip3 install bson flask Unidecode pyftpdlib python-dotenv requests pymongo flask-cors waitress threaded
+COPY containers/apache/requirements.txt ${AUTOVOLA_DIRECTORY}/requirements.txt
+WORKDIR ${AUTOVOLA_DIRECTORY}/
+RUN pip3 install -r requirements.txt
+
+### PYTHON API ###
+RUN /bin/bash -l -c 'echo export FLASK_SECRET_KEY="$(openssl rand -hex 64)" >> /etc/bash.bashrc'
 RUN chown -R www-data:www-data ${AUTOVOLA_DIRECTORY}
 RUN chown -R www-data:www-data ${DUMPS_DIRECTORY}
 RUN chown -R www-data:www-data ${SYMBOLS_DIRECTORY}
@@ -28,12 +33,16 @@ COPY autovolagui/api/flask-api.py /var/www/api/flaskapi.py
 COPY autovolagui/api/mongoconn.py /var/www/api/mongoconn.py
 COPY containers/apache/flask/flaskapi.wsgi /var/www/api/flaskapi.wsgi
 
+# Tell Apache its hostname
+RUN echo "export APACHE_HOSTNAME=${APACHE_HOSTNAME}" >> /etc/environment
+
 ### APACHE ###
-RUN chmod -R 755 /var/www
+RUN chmod -R 744 /var/www
 COPY containers/apache/apache/sites/ /etc/apache2/sites-available/
 COPY containers/apache/apache/apache2.conf /etc/apache2/apache2.conf
 COPY containers/apache/apache/envvars /etc/apache2/envvars
 COPY autovolagui/build/ /var/www/html/
+RUN chown -R www-data:www-data /var/www/
 RUN a2ensite api
 RUN a2enmod rewrite
 RUN a2enmod headers 
