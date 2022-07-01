@@ -16,7 +16,6 @@ RUN mkdir -p ${SYMBOLS_DIRECTORY}/linux
 RUN sed -i 's/stable\/updates/stable-security\/updates/' /etc/apt/sources.list
 RUN apt-get update
 RUN apt-get install apache2 python3-pip libapache2-mod-wsgi-py3 python-dev pkg-config libglib2.0-dev libgirepository1.0-dev libcairo2-dev -y
-#RUN pip3 install bson flask Unidecode pyftpdlib python-dotenv requests pymongo flask-cors waitress threaded
 COPY containers/apache/requirements.txt ${AUTOVOLA_DIRECTORY}/requirements.txt
 WORKDIR ${AUTOVOLA_DIRECTORY}/
 RUN pip3 install -r requirements.txt
